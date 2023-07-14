@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es-cl">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        {% load static %}
+        <title>{% block title %}{% endblock %} Salon de la fama</title>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link rel="icon" href="{% static 'img/logo.svg' %}" type="image/x-icon">
+        
+
+        
+
+
+
+    </head>
+    <body  class="bg" data-bs-theme="ligth" >
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary mx-3 ">
+                <div class="wrap">
+                    <div class="widget">
+                        <div class="reloj">
+                            <p id="horas" class="horas"></p>
+                            <p class="separador">:</p>
+                            <p id="minutos" class="minutos" ></p>
+                            <p id="fecha" class="fecha"></p>
+                            
+                        </div>
+                    </div>    
+                </div>
+                
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="{% static 'img/logo.svg' %}" alt="Logo" height="50">
+                        <span class="logo-text">SALON DE LA FAMA SELECCIÓN CHILENA</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index"><span class="logo-text1">Inicio</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="listar"><span class="logo-text1">BD jugadores</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="nosotros"><span class="logo-text1">Nosotros</span></a></li>              
+                            <li class="nav-item"><a class="nav-link" href="contacto"><span class="logo-text1">Contacto</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="api"><span class="logo-text1">Campeonato Nacional</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/"><span class="logo-text1">Salir</span></a></li>
+                            <li>
+                                <button onclick="cambiarTema()" class="btn btn-dark bg-primary"><i id="dl-icon" class="bi bi-moon"></i></button>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main  class=" container" >
+        
+            
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false" style="max-width: 1000px; margin: 0 auto;">
+                    <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'img/slider1.jpg' %}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                        <h1>Selección Chilena 1982</h1>
+                        <h3>Mundial de fútbol en España.</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/slider2.jpg' %}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                        <h1>Selección Chilena 1998</h1>
+                        <h3>Mundial de fútbol en Francia.</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/slider3.jpg' %}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                        <h1>Selección Chilena 2010</h1>
+                        <h3>Mundial de fútbol en Sudáfrica.</h3>
+                        </div>
+                    </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                
+                <div class="container-fluid" style="background-color: #ff0000;">
+                    <div class="text-center mt-1">
+                        <h1 class="fade-in" style="color: #fff;">Un espacio para quienes consiguieron la gloria</h1>
+                        <h3 class="fade-in" style="color: #fff;">Históricos de nuestra Selección</h3>
+                    </div>
+                </div>
+                
+                
+                    <div class="container px-4 px-lg-5 mt-5 ">
+                        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <img class="card-img-top" src="{% static 'img/Zamorano.jpg' %}" alt="Zamorano" >
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder">Ivan Zamorano</h5>
+                                            Centro Delantero
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-danger mt-auto" href="xzamorano.html">Ver Mas</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <img class="card-img-top" src="{% static 'img/Salas.jpg' %}" alt="Salas" >
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder">Marcelo Salas</h5>
+                                            Centro Delantero
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-danger mt-auto" href="xsalas.html">Ver Mas</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <img class="card-img-top" src="{% static 'img/leonel.jpg' %}"" alt="leonel" >
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder">Leonel Sánchez</h5>
+                                            Puntero Izquierdo
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-danger mt-auto" href="xleonel.html">Ver Mas</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <img class="card-img-top" src="{% static 'img/chupete.jpg' %}" alt="chupete" >
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder">Humberto Suazo</h5>
+                                            Centro Delantero
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-danger mt-auto" href="xsuazo.html">Ver Mas</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <img class="card-img-top" src="{% static 'img/elias.jpg' %}" alt="Figeroa" >
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder">Elías Figueroa</h5>
+                                            Defensa Central
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-danger mt-auto" href="xelias.html">Ver Mas</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <img class="card-img-top" src="{% static 'img/caszely.jpg' %}" alt="caszely" >
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder">Carlos Caszely</h5>
+                                            Centro Delantero
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-danger mt-auto" href="xcaszely.html">Ver Mas</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <img class="card-img-top" src="{% static 'img/quintano.jpg' %}" alt="quintano" >
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder">Alberto Quintano</h5>
+                                            Defensa Central
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-danger mt-auto" href="xquintano.html">Ver Mas</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <img class="card-img-top" src="{% static 'img/JuniorFernandes.jpg' %}" alt="JuniorFernandes" >
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder">Junior "Bicicleta" Fernandes</h5>
+                                            Portero
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-danger mt-auto" href="xjunior.html">Ver Mas</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+            
+        </main>
+
+        <div class="container">
+            <div class="card mx-auto" style="max-width: 600px;">
+                <div class="card-body text-center">
+                    <h1 class="card-title">El clima actual es:</h1>
+                    <div id="img-clima"></div>
+                    <div id="weather"></div>
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+
+        {% block first_content %}{% endblock %}
+
+        {% block second_content %}{% endblock %}
+
+
+
+        
+
+
+        <footer class="footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4">
+                  <h3>Acerca de</h3>
+                    <p>Esta página web es un homenaje a los mejores futbolistas que han representado a nuestra querida selección chilena. Aquí podrás descubrir la trayectoria y los logros de los ídolos que han dejado huella en la historia del fútbol chileno.</p>
+                </div>
+                <div class="col-lg-4">
+                  <h3>Información de contacto</h3>
+                  <p>Correo electrónico: HOF@duocuc.cl</p>
+                  <p>Teléfono: +56963431289</p>
+                </div>
+                <div class="col-lg-4">
+                  <h3>Información legal</h3>
+                  <p>Términos y condiciones</p>
+                  <p>Política de privacidad</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12 text-center">
+                  <h3>Síguenos en redes sociales</h3>
+                  <div class="social-icons">
+                    <a href="http://www.facebook.com" target="_blank" class="social-icon"><i class="bi bi-facebook"></i></a>
+                    <a href="http://www.twitter.com" target="_blank" class="social-icon"><i class="bi bi-twitter"></i></a>
+                    <a href="http://www.instagram.com" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12 text-center">
+                  <img src="{% static 'img/logo.svg' %}" alt="Logo" height="80">
+                </div>
+              </div>
+            </div>
+          </footer>
+          
+          
+          
+
+        
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2p6xCNGVN2W24DqAInh06mxlk1m7JvNI&callback=initMap&v=weekly" defer></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+          <script src="{% static 'js/scripts.js' %}"></script>
+          <script src="{% static 'js/reloj.js' %}"></script>
+          {% block js_mine %}{% endblock %}
+        
+
+    </body>
+</html>

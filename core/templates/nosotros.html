@@ -1,0 +1,137 @@
+{% extends 'index.html'% }
+
+{% block title %}nosotros{% endblock %}
+
+{% load static %}
+
+{% block first_content %}
+
+<!DOCTYPE html>
+<html lang="es-cl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Nosotros</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
+</head>
+
+<body class="bg" data-bs-theme="ligth">
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mx-3">
+      <div class="wrap">
+        <div class="widget">
+          <div class="reloj">
+            <p id="horas" class="horas"></p>
+            <p class="separador">:</p>
+            <p id="minutos" class="minutos"></p>
+            <p id="fecha" class="fecha"></p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="{% static 'img/logo.svg' %}" alt="Logo" height="50">
+          <span class="logo-text">SALON DE LA FAMA SELECCIÓN CHILENA</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index"><span class="logo-text1">Inicio</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="nosotros"><span class="logo-text1">Nosotros</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto"><span class="logo-text1">Contacto</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="api"><span class="logo-text1">Campeonato Nacional</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/"><span class="logo-text1">Salir</span></a></li>
+            <li>
+              <button onclick="cambiarTema()" class="btn btn-dark bg-primary"><i id="dl-icon" class="bi bi-moon"></i></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container" style="background-color: #ff0000;">
+    <div class="text-center mt-1">
+        <h1 class="fade-in" style="color: #fff;">Equipo de trabajo</h1>
+    </div>
+</div>
+
+<main>
+  <section id="equipo">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-3 mx- ml-4">
+          <div class="card">
+            <img src="{% static 'img/tomas.jpg' %}" class="card-img-top rounded-circle" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Tomas Barrueto</h5>
+              <p class="card-text">Programador / Diseñador </p>
+              <p class="card-text">Estudiante de analista programador en Duoc UC.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3 mx-5 mr-4">
+          <div class="card">
+            <img src="{% static 'img/cesar.jpg' %}" class="card-img-top rounded-circle" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Cesar Guerrero</h5>
+              <p class="card-text">Programador / Diseñador</p>
+              <p class="card-text">Estudiante de analista programador en Duoc UC.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <footer class="footer" style="margin-top: 30px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h3>Acerca de</h3>
+          <p>Esta página web es un homenaje a los mejores futbolistas que han representado a nuestra querida selección chilena. Aquí podrás descubrir la trayectoria y los logros de los ídolos que han dejado huella en la historia del fútbol chileno.</p>
+        </div>
+        <div class="col-lg-4">
+          <h3>Información de contacto</h3>
+          <p>Correo electrónico: HOF@duocuc.cl</p>
+          <p>Teléfono: +56963431289</p>
+        </div>
+        <div class="col-lg-4">
+          <h3>Información legal</h3>
+          <p>Términos y condiciones</p>
+          <p>Política de privacidad</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h3>Síguenos en redes sociales</h3>
+          <div class="social-icons">
+            <a href="http://www.facebook.com" target="_blank" class="social-icon"><i class="bi bi-facebook"></i></a>
+            <a href="http://www.twitter.com" target="_blank" class="social-icon"><i class="bi bi-twitter"></i></a>
+            <a href="http://www.instagram.com" target="_blank" class="social-icon"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <img src="{% static 'img/logo.svg' %}" alt="Logo" height="80">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script src="{% static 'js/scripts.js' %}"></script>
+  <script src="{% static 'js/reloj.js' %}"></script>
+
+</body>
+{% endblock %}
+
